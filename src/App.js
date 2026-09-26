@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import Navbar from './components/Navbar';
+import ProductList from './components/ProductList';
+import ShoppingCart from './components/ShoppingCart';
+import RegistrationForm from './components/RegistrationForm';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+return (
+<div className="App">
+<Navbar />
+<Container>
+<Row>
+<Col md={8}>
+<ProductList />
+</Col>
+<Col md={4}>
+<ShoppingCart />
+</Col>
+</Row>
+<Row>
+<Col md={12}>
+<RegistrationForm />
+</Col>
+</Row>
+</Container>
+</div>
+);
 }
-
-export default App;
+export default App;     
