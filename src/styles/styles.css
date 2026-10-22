@@ -1,0 +1,61 @@
+/* Identidad visual de la Forma C: Crema, Rosa Suave y Chocolate */
+:root {
+  --crema: #fff5e1;
+  --rosa: #ffc0cb;
+  --chocolate: #8b4513;
+  --marron-texto: #5d4037;
+  --gris-texto: #b0bec5;
+  --chocolate-oscuro: #6d360f;
+
+  --bs-body-bg: var(--crema);
+  --bs-body-color: var(--marron-texto);
+  --bs-link-color: var(--chocolate);
+  --bs-link-hover-color: var(--chocolate-oscuro);
+  --bs-border-color: #e8d8c3;
+}
+
+body {
+  font-family: 'Lato', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+.titulo-marca {
+  font-family: 'Pacifico', cursive;
+  color: var(--chocolate);
+  font-weight: 400;
+}
+
+/* Bootstrap define sus botones con variables propias, no con --bs-primary */
+.btn-primary {
+  --bs-btn-bg: var(--chocolate);
+  --bs-btn-border-color: var(--chocolate);
+  --bs-btn-hover-bg: var(--chocolate-oscuro);
+  --bs-btn-hover-border-color: var(--chocolate-oscuro);
+  --bs-btn-active-bg: var(--chocolate-oscuro);
+  --bs-btn-active-border-color: var(--chocolate-oscuro);
+  --bs-btn-disabled-bg: var(--chocolate);
+  --bs-btn-disabled-border-color: var(--chocolate);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--chocolate);
+  --bs-btn-border-color: var(--chocolate);
+  --bs-btn-hover-bg: var(--chocolate);
+  --bs-btn-hover-border-color: var(--chocolate);
+  --bs-btn-active-bg: var(--chocolate);
+  --bs-btn-active-border-color: var(--chocolate);
+}
+
+.precio {
+  color: var(--chocolate);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.imagen-producto {
+  height: 200px;
+  object-fit: cover;
+}
