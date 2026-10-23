@@ -3,7 +3,7 @@ import { Button, Card, Container } from "react-bootstrap"
 import { Link, useParams } from "react-router-dom"
 import { obtenerProducto } from "../data/db"
 
-function DetalleProductoView() {
+function DetalleProductoView({agregarAlCarrito}) {
   const { id } = useParams()
   const [producto, setProducto] = useState(null)
 
@@ -55,13 +55,17 @@ function DetalleProductoView() {
             </Card.Text>
           )}
 
+          <Button variant="primary" className="me-2" onClick={() => agregarAlCarrito(producto)}>
+            Agregar al carrito
+          </Button>
+          
           <Button as={Link} to="/productos" variant="secondary">
             Volver
           </Button>
         </Card.Body>
       </Card>
     </Container>
-  )
+  );
 }
 
 export default DetalleProductoView

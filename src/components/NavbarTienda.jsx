@@ -1,7 +1,10 @@
-import { Button, Container, Nav, Navbar } from "react-bootstrap"
+import { Badge, Button, Container, Nav, Navbar } from "react-bootstrap"
 import { Link, NavLink } from "react-router-dom"
 
-function NavbarTienda({ sesion, setSesion }) {
+function NavbarTienda({ sesion, setSesion, carrito }) {
+
+const totalItems = carrito.reduce((total, item) => total + item.cantidad, 0)
+
   function cerrarSesion() {
     sessionStorage.removeItem("usuarioSesion")
     setSesion(null)
@@ -25,7 +28,8 @@ function NavbarTienda({ sesion, setSesion }) {
             <Nav.Link as={NavLink} to="/nosotros">Nosotros</Nav.Link>
             <Nav.Link as={NavLink} to="/blogs">Blogs</Nav.Link>
             <Nav.Link as={NavLink} to="/contacto">Contacto</Nav.Link>
-            <Nav.Link as={NavLink} to="/carrito">Carrito</Nav.Link>
+            <Nav.Link as={NavLink} to="/carrito">Carrito{totalItems > 0 && 
+            (<Badge bg="danger" pill className="ms-1">{totalItems}</Badge>)}</Nav.Link>
 
             {sesion ? (
               <>

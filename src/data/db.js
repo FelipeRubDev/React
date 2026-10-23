@@ -1,4 +1,4 @@
-import { productosIniciales } from "./productosIniciales"
+import { productosIniciales } from "./productosIniciales.js"
 
 const PRODUCTOS = "productos"
 const USUARIOS = "usuarios"
@@ -61,4 +61,14 @@ export function crearUsuario(usuario) {
   usuarios.push(usuario)
   guardar(USUARIOS, usuarios)
   return usuario
+}
+
+// Pedidos
+const PEDIDOS = "pedidos"
+
+export function crearPedido(pedido) {
+  const pedidos = leer(PEDIDOS)
+  pedidos.push(pedido)
+  guardar(PEDIDOS, pedidos)
+  return pedido
 }
