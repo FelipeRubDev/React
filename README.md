@@ -1,16 +1,72 @@
-# React + Vite
+**Pastelería 1000 Sabores**
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+---
 
-Currently, two official plugins are available:
+## Descripción del Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Sitio web de una pastelería migrado de HTML a React. Incluye catálogo dinámico, carrito persistente, checkout, validación de formularios y un panel de administración con control de accesos por rol.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Características Principales
 
-## Expanding the Oxlint configuration
+### Módulo Cliente (Público)
+* **Catálogo Dinámico:** 16 productos en 8 categorías.
+* **Detalle de Producto:** cada ficha se abre con el id en la URL, por ejemplo `/producto/TC001`.
+* **Categorías y Ofertas:** filtros por categoría y vista exclusiva de productos con precio de oferta.
+* **Carrito de Compra Persistente:** agregar, cambiar cantidad, eliminar y calcular el total en pesos. Se mantiene al recargar.
+* **Checkout:** formulario validado, creación del pedido y mensaje de compra exitosa o fallida.
+* **Registro e Inicio de Sesión:** usuarios guardados en el navegador y sesión activa hasta cerrar el navegador.
+* **Validación de Formularios:** nombre, correo con `@`, contraseñas coincidentes y dirección de despacho obligatoria.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Módulo de Administración
+* **Control de Accesos:** solo el rol Administrador puede entrar al panel.
+* **Alerta de Stock Crítico:** indicador rojo cuando el stock es igual o menor al umbral configurado.
+* **Gestor de Inventario:** reabastecer stock, eliminar productos y agregar productos nuevos con validación.
+
+---
+
+## Tecnologías Utilizadas
+
+* **React 19**
+* **Vite**
+* **React Bootstrap**
+* **React Router**
+* **LocalStorage y SessionStorage**
+* **Jasmine y Karma**
+
+---
+
+## Cuentas de Prueba
+
+El administrador está fijo en el código. Los clientes se crean desde el registro.
+
+* `admin@tienda.cl` / `123456` entra como Administrador.
+* Cualquier correo registrado entra como Cliente, con la contraseña elegida al registrarse.
+
+---
+
+## Instalación y Ejecución
+
+```bash
+npm install
+npm run dev
+```
+
+La aplicación queda disponible en `http://localhost:5173/`.
+
+---
+
+## Pruebas
+
+```bash
+npm test
+```
+
+Ejecuta las pruebas unitarias con Jasmine y Karma, y genera el reporte de cobertura en `coverage/`.
+
+```bash
+npm run build
+```
+
+Genera la versión de producción en `dist/`.
